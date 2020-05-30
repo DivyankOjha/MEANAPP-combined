@@ -1,0 +1,16 @@
+.form-container {
+  margin-top: 50px;
+  max-width: 350px;
+}
+
+form {
+  display: -webkit-inline-flex;
+  flex-direction: column;
+}
+
+.button {
+  display: inline;
+
+  margin-left: 25px;
+  margin-right: 80px;
+}

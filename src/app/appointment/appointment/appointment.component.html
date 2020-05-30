@@ -1,0 +1,73 @@
+<mat-card>
+  <mat-toolbar *ngIf="successMsg" color="accent">{{ successMsg }}</mat-toolbar>
+  <mat-toolbar *ngIf="errorMsg" color="warn">{{ errorMsg }}</mat-toolbar>
+
+  <div class="form-container">
+    <form (submit)="createAppointment()">
+      <ul>
+        <li>
+          <mat-form-field>
+            <mat-label>Appointment Date</mat-label>
+            <input
+              [matDatepicker]="picker"
+              type="text"
+              matInput
+              required
+              [(ngModel)]="appointmentDate"
+              name="appointmentDate"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </li>
+        <li>
+          <mat-form-field>
+            <input
+              matInput
+              [(ngModel)]="name"
+              type="text"
+              name="name"
+              placeholder="Name"
+              required
+            />
+          </mat-form-field>
+        </li>
+
+        <li>
+          <mat-form-field>
+            <input
+              matInput
+              minlength="1"
+              type="email"
+              [(ngModel)]="email"
+              name="email"
+              placeholder="email"
+              required
+            />
+            <!-- <mat-error *ngIf="MailID.invalid"
+                >Please enter Employee MailID.</mat-error
+              > -->
+          </mat-form-field>
+        </li>
+      </ul>
+      <button mat-raised-button type="submit" color="primary">
+        Make Appointment
+      </button>
+    </form>
+  </div>
+</mat-card>
+<mat-card>
+  <div class="button">
+    <button
+      mat-raised-button
+      type="button"
+      color="accent"
+      (click)="onbookedAppointmentList()"
+    >
+      Booked Appointment List
+    </button>
+  </div>
+</mat-card>

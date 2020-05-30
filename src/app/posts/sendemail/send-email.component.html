@@ -1,0 +1,54 @@
+<mat-card>
+  <form
+    (submit)="onSendEmail(emailForm)"
+    #emailForm="ngForm"
+    *ngIf="!isLoading"
+  >
+    <mat-form-field>
+      <mat-label>Your Email</mat-label>
+      <input
+        readonly="readonly"
+        matInput
+        required
+        minlength="1"
+        type="email"
+        ngModel
+        name="useremail"
+        #email="ngModel"
+        [(ngModel)]="useremail"
+        style="font-weight: bold;"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Enter Recievers Email</mat-label>
+      <input
+        matInput
+        name="remail"
+        ngModel
+        type="email"
+        placeholder="E-Mail"
+        #emailInput="ngModel"
+        required
+        email
+      />
+      <mat-error *ngIf="emailInput.invalid"
+        >Please enter a valid email.</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Enter a Message to send</mat-label>
+      <textarea
+        matInput
+        type="text"
+        name="content"
+        ngModel
+        placeholder="Enter content"
+        required
+      ></textarea>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" *ngIf="!isLoading">
+      send
+    </button>
+  </form>
+</mat-card>

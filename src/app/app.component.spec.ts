@@ -3,6 +3,8 @@ import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./header/header.component";
 import { AppointmentComponent } from "./appointment/appointment/appointment.component";
 import { AppointmentListComponent } from "./appointment/appointment-list/appointment-list.component";
+import { HttpClientModule } from "@angular/common/http";
+import { ReactiveFormsModule } from "@angular/forms";
 
 describe("AppComponent", () => {
   beforeEach(async(() => {
@@ -12,7 +14,8 @@ describe("AppComponent", () => {
         HeaderComponent,
         AppointmentComponent,
         AppointmentListComponent,
-      
+        HttpClientModule,
+        ReactiveFormsModule,
       ],
     }).compileComponents();
   }));

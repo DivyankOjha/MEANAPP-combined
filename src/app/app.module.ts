@@ -3,7 +3,11 @@ import { BrowserModule } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from "@angular/core";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
-import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import {
+  HttpClientModule,
+  HTTP_INTERCEPTORS,
+  HttpClient,
+} from "@angular/common/http";
 
 import { AppComponent } from "./app.component";
 
@@ -12,10 +16,6 @@ import { AuthInterceptor } from "./auth/auth-interceptor";
 import { HeaderComponent } from "./header/header.component";
 import { Errorcomponent } from "./error.component";
 import { SendEmail } from "./posts/sendemail/send-email.component";
-import { HomeComponent } from "./appointment/home/home.component";
-import { AppointmentListComponent } from "./appointment/appointment-list/appointment-list.component";
-import { AppointmentComponent } from "./appointment/appointment/appointment.component";
-
 import { NgxSpinnerModule } from "ngx-spinner";
 import { PasswordComponent } from "./passwordgenerator/password.component";
 import { AngularMaterialModule } from "./angular.material";
@@ -28,7 +28,6 @@ import { AppointmentModule } from "./appointment/appointment.module";
     HeaderComponent,
     Errorcomponent,
     SendEmail,
-
     PasswordComponent,
   ],
   imports: [
@@ -38,6 +37,7 @@ import { AppointmentModule } from "./appointment/appointment.module";
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+
     NgxSpinnerModule,
     AngularMaterialModule,
     PostModule,

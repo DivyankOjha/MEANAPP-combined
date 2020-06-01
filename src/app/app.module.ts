@@ -16,7 +16,7 @@ import { AuthInterceptor } from "./auth/auth-interceptor";
 import { HeaderComponent } from "./header/header.component";
 import { Errorcomponent } from "./error.component";
 import { SendEmail } from "./posts/sendemail/send-email.component";
-import { NgxSpinnerModule } from "ngx-spinner";
+import { NgxSpinnerModule, NgxSpinnerService } from "ngx-spinner";
 import { PasswordComponent } from "./passwordgenerator/password.component";
 import { AngularMaterialModule } from "./angular.material";
 import { PostModule } from "./posts/posts/post.module";
@@ -37,7 +37,6 @@ import { AppointmentModule } from "./appointment/appointment.module";
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
-
     NgxSpinnerModule,
     AngularMaterialModule,
     PostModule,
@@ -46,6 +45,7 @@ import { AppointmentModule } from "./appointment/appointment.module";
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    //{ provide: NgxSpinnerService },
   ],
   bootstrap: [AppComponent],
   entryComponents: [Errorcomponent],

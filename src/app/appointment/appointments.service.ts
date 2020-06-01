@@ -4,17 +4,16 @@ import { HttpClient } from "@angular/common/http";
 import { AppointmentModel } from "./appointment-model";
 
 import { Observable } from "rxjs";
+const BACKEND_URL = environment.apiUrl;
 
 @Injectable({
   providedIn: "root",
 })
 export class AppointmentsService {
-  readonly APIURL = "http://localhost:3000/api";
-
   constructor(private http: HttpClient) {}
 
   getAppointments(): Observable<AppointmentModel[]> {
-    return this.http.get<AppointmentModel[]>(this.APIURL + "/appointment");
+    return this.http.get<AppointmentModel[]>(BACKEND_URL + "/appointment");
   }
 
   // createAppointment(appointmentDate: string, name: string, email: string) {
@@ -35,7 +34,7 @@ export class AppointmentsService {
     name: string,
     email: string
   ): Observable<AppointmentModel> {
-    return this.http.post<AppointmentModel>(this.APIURL + "/appointment", {
+    return this.http.post<AppointmentModel>(BACKEND_URL + "/appointment", {
       appointmentDate,
       name,
       email,
@@ -44,6 +43,6 @@ export class AppointmentsService {
 
   cancelAppointment(id: String) {
     //console.log(id);
-    return this.http.delete(this.APIURL + "/appointment/" + id);
+    return this.http.delete(BACKEND_URL + "/appointment/" + id);
   }
 }

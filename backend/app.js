@@ -23,12 +23,12 @@ mongoose
   .catch(() => {
     console.log("Connection failed!");
   });
-// mongoose.set('useCreateIndex', true);
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use("/images", express.static(path.join(__dirname, "images")));
-app.use("/", express.static(path.join(__dirname, "angular")));
+app.use(bodyParser.json({ limit: "50mb" }));
+app.use(bodyParser.urlencoded({ extended: false }, { limit: "50mb" }));
+app.use("/pictures", express.static(path.join(__dirname, "pictures")));
+//app.use("/", express.static(path.join(__dirname, "angular")));
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -40,15 +40,16 @@ app.use((req, res, next) => {
     "Access-Control-Allow-Methods",
     "GET, POST, PATCH, PUT, DELETE, OPTIONS"
   );
+
   next();
 });
 
-app.use("/api/appointment", [appoinmentRoutes]);
 app.use("/api/posts", [postsRoutes]);
-app.use("/api/email", [emailRoutes]);
 app.use("/api/user", [userRoutes]);
-app.use((req, res, next) => {
-  res.sendFile(path.join(__dirname, "angular", "index.html"));
-});
+app.use("/api/appointment", [appoinmentRoutes]);
+app.use("/api/email", [emailRoutes]);
+// app.use((req, res, next) => {
+//   res.sendFile(path.join(__dirname, "angular", "index.html"));
+// });
 
 module.exports = app;

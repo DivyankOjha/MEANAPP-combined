@@ -1,15 +1,12 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
-import { LoginComponent } from "./auth/login/login.component";
-import { SignupComponent } from "./auth/signup/signup.component";
 import { AuthGuard } from "./auth/auth.guard";
 import { PostListComponent } from "./posts/posts/post-list/post-list.component";
 import { PostCreateComponent } from "./posts/posts/post-create/post-create.component";
 import { SendEmail } from "./posts/sendemail/send-email.component";
 import { HomeComponent } from "./appointment/home/home.component";
 import { AppointmentListComponent } from "./appointment/appointment-list/appointment-list.component";
-import { AppointmentComponent } from "./appointment/appointment/appointment.component";
 import { PasswordComponent } from "./passwordgenerator/password.component";
 //import { AppointmentComponent } from "./appointment/appointment.component";
 

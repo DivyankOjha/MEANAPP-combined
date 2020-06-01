@@ -5,6 +5,8 @@
 export const environment = {
   production: false,
   apiUrl: "http://localhost:3000/api",
+  // apiUrl:
+  //   "http://angularapp-env-2.eba-pmq2n2g4.us-east-2.elasticbeanstalk.com/api",
 };
 
 /*

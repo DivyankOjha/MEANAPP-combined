@@ -3,7 +3,9 @@ import { HttpClient } from "@angular/common/http";
 import { Router } from "@angular/router";
 import { SendModel } from "./sendemail-model";
 import { AuthService } from "src/app/auth/auth.service";
-//import { AuthService } from "src/app/auth/auth.service";
+import { environment } from "src/environments/environment";
+
+const BACKEND_URL = environment.apiUrl;
 
 @Injectable({
   providedIn: "root",
@@ -23,7 +25,7 @@ export class SendEmailsService {
     };
     this.http
       .post<{ message: string; email: SendModel }>(
-        "http://localhost:3000/api/email/sendemail",
+        BACKEND_URL + "/email/sendemail",
         sendData
       )
       .subscribe(() => {

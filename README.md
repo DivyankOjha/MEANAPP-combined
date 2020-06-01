@@ -1,5 +1,7 @@
-# Mean
+The project is up and running. I created  for general practice and learning. ofcourse there are bugs, once all things are set i will update it.
+project preview - http://mean-app-angular-node.s3-website.us-east-2.amazonaws.com/
 
+# Mean Stack Project (contains 4 different MEAN projects)
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.26.
 
 ## Development server

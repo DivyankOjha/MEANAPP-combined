@@ -2,7 +2,7 @@ The project is up and running. I developer  for practice and learning. ofcourse 
 The project is deployed using **Amazon Web services Elastic Beanstalk and Amazon s3**
 
 **project preview - http://mean-app-angular-node.s3-website.us-east-2.amazonaws.com/**
-###### Login and Signup required to see more modules, use any dummy or official email id and to get into it.
+###### Login and Signup required to see more modules, use any dummy or other credentials to get into it.
 
 ## Mean Stack Project (contains 4 different MEAN projects)
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.26.

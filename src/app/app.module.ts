@@ -21,6 +21,7 @@ import { PasswordComponent } from "./passwordgenerator/password.component";
 import { AngularMaterialModule } from "./angular.material";
 import { PostModule } from "./posts/posts/post.module";
 import { AppointmentModule } from "./appointment/appointment.module";
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AppointmentModule } from "./appointment/appointment.module";
     PasswordComponent,
   ],
   imports: [
+    FlexLayoutModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,

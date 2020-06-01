@@ -14,11 +14,17 @@ import {
   MatToolbarModule,
   MatTableModule,
   MatProgressSpinnerModule,
+  MatSidenavModule,
+  MatListModule,
+  MatMenuModule,
 } from "@angular/material";
 
 @NgModule({
   //importing will be done automatically by angular
   exports: [
+    MatMenuModule,
+    MatListModule,
+    MatSidenavModule,
     MatInputModule,
     MatCardModule,
     MatButtonModule,
